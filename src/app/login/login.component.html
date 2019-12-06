@@ -1,0 +1,21 @@
+DEPOTEX REMY
+
+<h1 style="text-align:center">
+    TP ANGULAR  : Le Chat
+  </h1>
+  <div class="login">
+    <h2 class="login-header">Votre identifiant</h2>
+    <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+  
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+        <input type="text" placeholder="Utilisateur" formControlName="email">
+      </p>
+  
+      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <div *ngIf="formControls.email.errors.required">Email is required</div>
+      </div>
+      <p>
+        <input type="submit" value="Connexion">
+      </p>
+    </form>
+  </div>
